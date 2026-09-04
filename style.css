@@ -1,0 +1,477 @@
+/* ========================================================
+   João Ferreira Maciel — Google Ads para pequenos negócios
+   ======================================================== */
+
+:root {
+  --ink:        #16221D;
+  --ink-soft:   #24332C;
+  --cream:      #F6F1E7;
+  --cream-soft: #EDE6D6;
+  --text-dark:  #1C1B17;
+  --text-muted: #6B6255;
+  --rust:       #C1592E;
+  --rust-dark:  #9F471F;
+  --teal:       #1F5C4E;
+  --cream-text: #F2ECDD;
+  --cream-text-muted: #B9C4BC;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --wrap: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: var(--cream);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+p { margin: 0; }
+
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* -------------------- Buttons -------------------- */
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 14px 26px;
+  border-radius: 999px;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  border: 1.5px solid transparent;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--rust);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--rust-dark); }
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.btn-ghost:hover { background: var(--ink); color: var(--cream); }
+
+.btn-ghost-dark {
+  border-color: rgba(242, 236, 221, 0.55);
+  color: var(--cream-text);
+}
+.btn-ghost-dark:hover {
+  background: rgba(242, 236, 221, 0.1);
+  border-color: var(--cream-text);
+}
+
+.btn-small {
+  padding: 10px 20px;
+  font-size: 0.88rem;
+}
+
+/* -------------------- Header -------------------- */
+
+.site-header {
+  background: var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  gap: 16px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--cream-text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.logo span { color: var(--rust); }
+
+.nav {
+  display: none;
+  gap: 28px;
+}
+
+.nav a {
+  color: var(--cream-text-muted);
+  text-decoration: none;
+  font-size: 0.94rem;
+  font-weight: 500;
+}
+.nav a:hover { color: var(--cream-text); }
+
+.header-inner .btn-small {
+  flex-shrink: 0;
+}
+
+/* -------------------- Hero -------------------- */
+
+.hero {
+  background: var(--ink);
+  padding: 56px 0 72px;
+}
+
+.hero-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: center;
+}
+
+.hero-photo {
+  width: 190px;
+  flex-shrink: 0;
+}
+
+.hero-photo img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--rust);
+}
+
+.hero-text {
+  text-align: center;
+}
+
+.hero-text h1 {
+  color: var(--cream-text);
+  font-size: 2rem;
+  max-width: 20ch;
+  margin: 0 auto;
+}
+
+.hero-lede {
+  color: var(--cream-text-muted);
+  font-size: 1.05rem;
+  max-width: 46ch;
+  margin: 20px auto 0;
+}
+
+.hero-actions {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+/* -------------------- Sobre -------------------- */
+
+.sobre {
+  padding: 72px 0;
+}
+
+.sobre h2 {
+  font-size: 1.7rem;
+  margin-bottom: 28px;
+}
+
+.sobre-body p {
+  color: var(--text-dark);
+  font-size: 1.02rem;
+  max-width: 62ch;
+}
+.sobre-body p + p { margin-top: 16px; }
+
+.sobre-facts {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-top: 1px solid rgba(28, 27, 23, 0.12);
+  padding-top: 28px;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fact-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.fact-value {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--teal);
+  font-weight: 500;
+}
+
+/* -------------------- Serviços -------------------- */
+
+.servicos {
+  background: var(--cream-soft);
+  padding: 72px 0;
+}
+
+.servicos h2 {
+  font-size: 1.7rem;
+}
+
+.section-lede {
+  color: var(--text-muted);
+  max-width: 56ch;
+  margin-top: 14px;
+  font-size: 1rem;
+}
+
+.servico-item {
+  border-top: 1px solid rgba(28, 27, 23, 0.14);
+  padding: 26px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.servico-item:last-child {
+  border-bottom: 1px solid rgba(28, 27, 23, 0.14);
+}
+
+.servico-item h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.servico-info p {
+  color: var(--text-muted);
+  max-width: 52ch;
+}
+
+.servico-preco {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.servico-preco span {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--rust-dark);
+}
+
+.servico-preco small {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* -------------------- Como funciona -------------------- */
+
+.como-funciona {
+  padding: 72px 0;
+}
+
+.como-funciona h2 {
+  font-size: 1.7rem;
+  margin-bottom: 40px;
+}
+
+.passos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.passos li {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.passo-num {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.passos h3 {
+  font-size: 1.08rem;
+  margin-bottom: 6px;
+}
+
+.passos p {
+  color: var(--text-muted);
+  max-width: 52ch;
+}
+
+/* -------------------- Contato -------------------- */
+
+.contato {
+  background: var(--ink);
+  padding: 72px 0;
+}
+
+.contato h2 {
+  color: var(--cream-text);
+  font-size: 1.9rem;
+}
+
+.contato p {
+  color: var(--cream-text-muted);
+  margin-top: 14px;
+  max-width: 40ch;
+  font-size: 1.02rem;
+}
+
+.contato-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contato-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+/* -------------------- Footer -------------------- */
+
+.site-footer {
+  background: var(--ink-soft);
+  padding: 20px 0;
+}
+
+.site-footer p {
+  color: var(--cream-text-muted);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+/* ========================================================
+   Tablet / Desktop
+   ======================================================== */
+
+@media (min-width: 768px) {
+  .nav { display: flex; }
+
+  .hero { padding: 88px 0 100px; }
+
+  .hero-grid {
+    flex-direction: row;
+    text-align: left;
+    gap: 64px;
+  }
+
+  .hero-photo { width: 260px; }
+
+  .hero-text { text-align: left; }
+
+  .hero-text h1 { font-size: 2.7rem; margin: 0; }
+
+  .hero-lede { margin: 20px 0 0; }
+
+  .hero-actions {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .sobre-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+  }
+
+  .sobre h2 { margin-bottom: 0; }
+
+  .sobre-facts {
+    flex-direction: row;
+    border-top: none;
+    padding-top: 0;
+    margin-top: 40px;
+    gap: 48px;
+  }
+
+  .servico-item {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .servico-preco {
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .passos {
+    flex-direction: row;
+  }
+
+  .passos li {
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .contato-grid {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contato-links {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-text h1 { font-size: 3.1rem; }
+}
